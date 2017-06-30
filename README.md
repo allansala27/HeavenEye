@@ -1,5 +1,10 @@
 # Project - {HeavenEye}
 
+## Colaborators
+- Carlo Anacta
+- Wyatt Thomson
+- Allan Salandanan
+
 ## Live Link 
  - NA
 
