@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
     
 class Menu extends Component {
+    
+    goToHomeScreen = () => {
+        this.props.navigation.navigate('Home');
+    };
+
     render() {
         return (
             <View>
@@ -9,8 +14,16 @@ class Menu extends Component {
                     Menu
                 </Text>    
                 <Button
-                    title="Play"
+                    title="Single Player"
                     // onPress={}
+                />
+                <Button
+                    title="Multiplayer"
+                    // onPress={}
+                />
+                <Button
+                    title="Cancel"
+                    onPress={this.goToHomeScreen}
                 />
             </View>
         );
