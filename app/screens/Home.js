@@ -9,10 +9,7 @@ class Menu extends Component {
 
     render() {
         return (
-            <View>
-                <Text>
-                    Heaven Eye
-                </Text>    
+            <View>  
                 <Button
                     title="Play"
                     onPress={this.goToMenu}

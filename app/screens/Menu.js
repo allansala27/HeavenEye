@@ -7,15 +7,16 @@ class Menu extends Component {
         this.props.navigation.navigate('Home');
     };
 
+    playSingle = () => {
+        this.props.navigation.navigate('Single');
+    }
+
     render() {
         return (
-            <View>
-                <Text>
-                    Menu
-                </Text>    
+            <View> 
                 <Button
                     title="Single Player"
-                    // onPress={}
+                    onPress={this.playSingle}
                 />
                 <Button
                     title="Multiplayer"
