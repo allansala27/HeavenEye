@@ -12,7 +12,13 @@ class SinglePlayer extends Component {
 
     render() {
         return (
-            <View>
+            <View
+                style={
+                    {
+                        position: 'absolute',
+                        bottom:0,
+                    }
+                }>
                 <Modal
                     animationType={"slide"}
                     transparent={false}

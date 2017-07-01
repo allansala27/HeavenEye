@@ -22,5 +22,8 @@ export const Screens = StackNavigator ({
 
 	Single: {
 		screen: SinglePlayer,
+		navigationOptions: {
+			title: 'Your Hand',
+		}
 	}
 })
