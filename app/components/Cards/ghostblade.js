@@ -1,9 +1,31 @@
 import React, { Component } from 'react';
-import { View, Text, Button, ScrollView, TouchableHighlight, Modal } from 'react-native';
+import { View, Text, Button, Image, ScrollView, TouchableHighlight, Modal, StyleSheet } from 'react-native';
 
-class Card extends Component {
-    state = {
-        modalVisible: false,
+import Deck from './Deck.json';
+
+var styles = StyleSheet.create({
+    image: {
+        height: 400,
+        width: 400,
+        resizeMode: 'cover'
+    }
+}) 
+
+class Ghostblade extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: "Ghostblade",
+            id: "0016",
+            played: false,
+            value: 10,
+            type: "melee",
+            modalVisible: false
+        }    
+    }
+
+    componentWillMount(){
+        console.log('this is deck!!! PAY ATTENTION TO ME');
     }
 
     setModalVisible(visible) {
@@ -11,10 +33,10 @@ class Card extends Component {
     }
 
 
-	render(){
-		return(
-			<View>
-				<Modal
+    render(){
+        return(
+            <View>
+                <Modal
                     animationType={"slide"}
                     transparent={false}
                     visible={this.state.modalVisible}
@@ -22,14 +44,10 @@ class Card extends Component {
                 >
                     <View style={{marginTop: 22}}>
                         <View>
-                            <Text
-                            	style={
-                                        {
-                                            fontSize: 20,
-                                            padding: 5,
-                                            backgroundColor: 'white'
-                                        }
-                                }>{this.props.children} Info</Text>
+                            <Image
+                                source= {require('./imgs/card_0016_ghostblade.png')}
+                                style= {styles.image}
+                            />
                             <TouchableHighlight onPress={() => {
                                 this.setModalVisible(!this.state.modalVisible)
                             }}>
@@ -47,7 +65,7 @@ class Card extends Component {
                         </View>
                     </View>
                 </Modal>
-				<TouchableHighlight onPress={() => {
+                <TouchableHighlight onPress={() => {
                         this.setModalVisible(true)
                     }}>
                     <Text 
@@ -58,12 +76,13 @@ class Card extends Component {
                                 backgroundColor: 'white'
                             }
                         }>
-                        {this.props.children}
+                        {this.state.name}
                     </Text>
                 </TouchableHighlight>
-			</View>
-		);
-	}
+            </View>
+        );
+    }
 }
 
-export default Card;
+
+export default Ghostblade;
