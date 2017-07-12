@@ -4,55 +4,46 @@ import { View, Text, Button, ScrollView, TouchableHighlight, Modal } from 'react
 // import Card from './Card/Card';
 
 //Cards
-import Atonement from './Cards/atonement';
-import Blessing from './Cards/blessing';
-import AngelOfDeath from './Cards/angelofdeath';
-import StormFall from './Cards/stormfall';
-import AeolianDance from './Cards/aeoliandance';
-import Holmgang from './Cards/holmgang';
-import Bloodmage from './Cards/bloodmage';
-import Archdaemon from './Cards/archdaemon';
-import LegionArcher from './Cards/legionarcher';
-import Edgedancer from './Cards/edgedancer';
-import Legionnaire from './Cards/legionnaire';
-import Dreadnaught from './Cards/dreadnaught';
-import Titanus from './Cards/titanus';
-import Katalies from './Cards/katalies';
-import WaterlightCityPrincess from './Cards/waterlightcityprincess';
-import Ghostblade from './Cards/ghostblade';
-import Valkyria from './Cards/valkyria';
-import Centurion from './Cards/centurion';
-import Berserker from './Cards/berserker';
-import IcePrincess from './Cards/iceprincess';
-import Lenia from './Cards/lenia';
-    
+import Atonement, {atonementId} from './Cards/atonement';
+import Blessing, {blessingId} from './Cards/blessing';
+import AngelOfDeath, {angelofdeathId} from './Cards/angelofdeath';
+import StormFall, {stormfallId} from './Cards/stormfall';
+import AeolianDance, {aeoliandanceId} from './Cards/aeoliandance';
+import Holmgang, {holmgangId} from './Cards/holmgang';
+import Bloodmage, {bloodmageId} from './Cards/bloodmage';
+import Archdaemon, {archdaemonId} from './Cards/archdaemon';
+import LegionArcher, {legionarcherId} from './Cards/legionarcher';
+import Edgedancer, {edgedancerId} from './Cards/edgedancer';
+import Legionnaire, {legionnaireId} from './Cards/legionnaire';
+import Dreadnaught, {dreadnaughtId} from './Cards/dreadnaught';
+import Titanus, {titanusId} from './Cards/titanus';
+import Katalies, {kataliesId} from './Cards/katalies';
+import WaterlightCityPrincess, {waterlightcityprincessId} from './Cards/waterlightcityprincess';
+import Ghostblade, {ghostbladeId} from './Cards/ghostblade';
+import Valkyria, {valkyriaId} from './Cards/valkyria';
+import Centurion, {centurionId} from './Cards/centurion';
+import Berserker, {berserkerId} from './Cards/berserker';
+import IcePrincess, {iceprincessId} from './Cards/iceprincess';
+import Lenia, {leniaId} from './Cards/lenia';
+
 class Hand extends Component {
+    constructor(props) {
+        super(props);
+
+        this.getRandomList = this.getRandomList.bind(this);
+    }
+
+    getRandomList () {
+    return [<Atonement key="{id}"/>, <Blessing key="2"/>, <AngelOfDeath key="3"/>];
+
+    }
 
     render() {
+
         return (
             <View>
                 <ScrollView horizontal={true}>
-                    <Atonement />
-                    <Blessing />
-                    <AngelOfDeath />
-                    <StormFall />
-                    <AeolianDance />
-                    <Holmgang />
-                    <Bloodmage />
-                    <Archdaemon />
-                    <LegionArcher />
-                    <Edgedancer />
-                    <Legionnaire />
-                    <Dreadnaught />
-                    <Titanus />
-                    <Katalies />
-                    <WaterlightCityPrincess />
-                    <Ghostblade />
-                    <Valkyria />
-                    <Centurion />
-                    <Berserker />
-                    <IcePrincess />
-                    <Lenia />
+                    {this.getRandomList()}
                 </ScrollView>
             </View>
         );
