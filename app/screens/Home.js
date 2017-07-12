@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
     
-class Menu extends Component {
+class Home extends Component {
     
     goToMenu = () => {
         this.props.navigation.navigate('Menu');
@@ -21,4 +21,4 @@ class Menu extends Component {
 
 
 
-export default Menu;
+export default Home;
