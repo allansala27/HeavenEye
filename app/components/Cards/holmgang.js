@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { View, Text, Button, Image, ScrollView, TouchableHighlight, Modal, StyleSheet } from 'react-native';
 
-import Deck from './Deck.json';
+// import Deck from './Deck.json';
 
 var styles = StyleSheet.create({
     image: {
-        height: 400,
+        height: 600,
         width: 400,
         resizeMode: 'cover'
     }
@@ -85,3 +85,4 @@ class Holmgang extends Component {
 
 
 export default Holmgang;
+export const holmgangId = '0006';
