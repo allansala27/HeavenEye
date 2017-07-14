@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Button, Image, ScrollView, TouchableHighlight, Modal, StyleSheet } from 'react-native';
 
+import SinglePlayer from '../../screens/SinglePlayer';
 // import Deck from './Deck.json';
 
 var styles = StyleSheet.create({
@@ -8,6 +9,12 @@ var styles = StyleSheet.create({
         height: 600,
         width: 400,
         resizeMode: 'cover'
+    },
+    play: {
+        width: 200
+    },
+    hide: {
+        width: 200
     }
 }) 
 
@@ -17,6 +24,7 @@ class Atonement extends Component {
         this.state = {
             name: "Atonement",
             id: "0001",
+            value: 2,
             played: false,
             type: "battleCon",
             modalVisible: false,
@@ -30,7 +38,6 @@ class Atonement extends Component {
     setModalVisible(visible) {
         this.setState({modalVisible: visible});
     }
-
 
 	render(){
 		return(
@@ -47,9 +54,20 @@ class Atonement extends Component {
                                 source= {require('./imgs/card_0001_atonement.png')}
                                 style= {styles.image}
                             />
-                            <TouchableHighlight onPress={() => {
-                                this.setModalVisible(!this.state.modalVisible)
-                            }}>
+                            <Button
+                                onPress={SinglePlayer.meleeScore += this.state.value}
+                                title="Play Card"
+                                color="#841584"
+                                style={styles.play}
+                            />
+                            <Button
+                                onPress={() => {
+                                    this.setModalVisible(!this.state.modalVisible)
+                                }}
+                                title="Hide Info"
+                                color="#841584"
+                                style={styles.hide}
+                            />
                                 <Text 
                                     style={
                                         {
@@ -60,7 +78,6 @@ class Atonement extends Component {
                                 }>
                                     Hide Info
                                 </Text>
-                            </TouchableHighlight>
                         </View>
                     </View>
                 </Modal>
