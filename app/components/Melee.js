@@ -46,6 +46,7 @@ class Melee extends Component {
             </View>
         );
     }
+
 }
 
 export default Melee;
