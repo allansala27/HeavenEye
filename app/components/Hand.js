@@ -34,7 +34,7 @@ class Hand extends Component {
     }
 
     getRandomList () {
-    return [<Atonement key="{id}"/>, <Blessing key="2"/>, <AngelOfDeath key="3"/>];
+    return [<Atonement key="{atonementId}"/>, <Blessing key="blessingId"/>, <AngelOfDeath key="angelofdeathId"/>, <StormFall key="{stormfallId}"/>, <AeolianDance key="aeoliandanceId"/>, <Holmgang key="holmgangId"/> ];
 
     }
 
