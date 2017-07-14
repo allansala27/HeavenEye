@@ -14,6 +14,7 @@ var styles = StyleSheet.create({
         height:100,
         width:60,
         resizeMode: 'contain'
+    },
     play: {
         width: 200
     },
