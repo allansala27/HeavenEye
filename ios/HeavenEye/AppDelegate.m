@@ -12,9 +12,6 @@
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 
-#import <Firebase.h>
-// #import UIKit
-
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -34,21 +31,7 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
-  [FIRApp configure];
   return YES;
-}
-
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-  var window: UIWindow?
-
-  func application(_ application: UIApplication,
-    didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?)
-    -> Bool {
-    FirebaseApp.configure()
-    return true
-  }
 }
 
 @end
