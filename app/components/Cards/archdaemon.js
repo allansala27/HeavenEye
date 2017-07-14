@@ -59,8 +59,8 @@ class Archdaemon extends Component {
                                 <Text 
                                     style={
                                         {
-                                            fontSize: 10,
-                                            padding: 5,
+                                            fontSize: 20,
+                                            padding: 10,
                                             backgroundColor: 'red'
                                         }
                                 }>

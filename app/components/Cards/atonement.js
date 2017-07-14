@@ -90,7 +90,7 @@ class Atonement extends Component {
                         this.setModalVisible(true)
                     }}>
                     <Image
-                        source= {require('./thumbs/thumb_001.png')}
+                        source= {require("./thumbs/thumb_001.png")}
                         style= {styles.thumb}
                     />
                 </TouchableHighlight>
