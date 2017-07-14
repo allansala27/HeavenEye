@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Button, ScrollView, TouchableHighlight, Modal } from 'react-native';
+import { View, Text, Button, ScrollView, TouchableHighlight, Modal, StyleSheet, Image} from 'react-native';
 
 // import Card from './Card/Card';
 
@@ -26,6 +26,15 @@ import Berserker, {berserkerId} from './Cards/berserker';
 import IcePrincess, {iceprincessId} from './Cards/iceprincess';
 import Lenia, {leniaId} from './Cards/lenia';
 
+var styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    // remove width and height to override fixed static size
+    width: null,
+    height: null,
+  }
+})
+
 class Hand extends Component {
     constructor(props) {
         super(props);
@@ -41,7 +50,7 @@ class Hand extends Component {
     render() {
 
         return (
-            <View>
+            <View style={{backgroundColor: 'blue'}}>
                 <ScrollView horizontal={true}>
                     {this.getRandomList()}
                 </ScrollView>
@@ -49,7 +58,5 @@ class Hand extends Component {
         );
     }
 }
-
-
 
 export default Hand;
