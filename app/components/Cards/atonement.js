@@ -11,8 +11,8 @@ var styles = StyleSheet.create({
         resizeMode: 'contain'
     },
     thumb: {
-        height:100,
-        width:60,
+        height:70,
+        width:50,
         resizeMode: 'contain'
     },
     play: {
@@ -40,6 +40,10 @@ class Atonement extends Component {
         console.log('this is deck!!! PAY ATTENTION TO ME');
     }
 
+    increaseValue() {
+        return SinglePlayer.meleeScore += this.state.value;
+    }
+
     setModalVisible(visible) {
         this.setState({modalVisible: visible});
     }
@@ -60,7 +64,7 @@ class Atonement extends Component {
                                 style= {styles.image}
                             />
                             <Button
-                                onPress={SinglePlayer.meleeScore += this.state.value}
+                                onPress={this.increaseValue}
                                 title="Play Card"
                                 color="#841584"
                                 style={styles.play}
@@ -73,16 +77,6 @@ class Atonement extends Component {
                                 color="#841584"
                                 style={styles.hide}
                             />
-                                <Text 
-                                    style={
-                                        {
-                                            fontSize: 10,
-                                            padding: 5,
-                                            backgroundColor: 'red'
-                                        }
-                                }>
-                                    Hide Info
-                                </Text>
                         </View>
                     </View>
                 </Modal>

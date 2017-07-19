@@ -38,7 +38,6 @@ var styles = StyleSheet.create({
 class Hand extends Component {
     constructor(props) {
         super(props);
-
         this.getRandomList = this.getRandomList.bind(this);
     }
 
