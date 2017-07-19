@@ -5,9 +5,14 @@ import { View, Text, Button, Image, ScrollView, TouchableHighlight, Modal, Style
 
 var styles = StyleSheet.create({
     image: {
-        height: 600,
-        width: 400,
-        resizeMode: 'cover'
+        height: 500,
+        width: 375,
+        resizeMode: 'contain'
+    },
+    thumb: {
+        height:100,
+        width:60,
+        resizeMode: 'contain'
     }
 }) 
 

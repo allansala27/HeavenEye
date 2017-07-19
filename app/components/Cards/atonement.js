@@ -6,9 +6,14 @@ import SinglePlayer from '../../screens/SinglePlayer';
 
 var styles = StyleSheet.create({
     image: {
-        height: 600,
-        width: 400,
-        resizeMode: 'cover'
+        height: 500,
+        width: 375,
+        resizeMode: 'contain'
+    },
+    thumb: {
+        height:70,
+        width:50,
+        resizeMode: 'contain'
     },
     play: {
         width: 200
@@ -35,6 +40,10 @@ class Atonement extends Component {
         console.log('this is deck!!! PAY ATTENTION TO ME');
     }
 
+    increaseValue() {
+        return SinglePlayer.meleeScore += this.state.value;
+    }
+
     setModalVisible(visible) {
         this.setState({modalVisible: visible});
     }
@@ -55,7 +64,7 @@ class Atonement extends Component {
                                 style= {styles.image}
                             />
                             <Button
-                                onPress={SinglePlayer.meleeScore += this.state.value}
+                                onPress={this.increaseValue}
                                 title="Play Card"
                                 color="#841584"
                                 style={styles.play}
@@ -68,32 +77,16 @@ class Atonement extends Component {
                                 color="#841584"
                                 style={styles.hide}
                             />
-                                <Text 
-                                    style={
-                                        {
-                                            fontSize: 10,
-                                            padding: 5,
-                                            backgroundColor: 'red'
-                                        }
-                                }>
-                                    Hide Info
-                                </Text>
                         </View>
                     </View>
                 </Modal>
 				<TouchableHighlight onPress={() => {
                         this.setModalVisible(true)
                     }}>
-                    <Text 
-                        style={
-                            {
-                                fontSize: 30,
-                                padding: 20,
-                                backgroundColor: 'white'
-                            }
-                        }>
-                        {this.state.name}
-                    </Text>
+                    <Image
+                        source= {require("./thumbs/thumb_001.png")}
+                        style= {styles.thumb}
+                    />
                 </TouchableHighlight>
 			</View>
 		);

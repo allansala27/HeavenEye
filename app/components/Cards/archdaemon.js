@@ -5,9 +5,14 @@ import { View, Text, Button, Image, ScrollView, TouchableHighlight, Modal, Style
 
 var styles = StyleSheet.create({
     image: {
-        height: 600,
-        width: 400,
-        resizeMode: 'cover'
+        height: 500,
+        width: 375,
+        resizeMode: 'contain'
+    },
+    thumb: {
+        height:100,
+        width:60,
+        resizeMode: 'contain'
     }
 }) 
 
@@ -54,8 +59,8 @@ class Archdaemon extends Component {
                                 <Text 
                                     style={
                                         {
-                                            fontSize: 10,
-                                            padding: 5,
+                                            fontSize: 20,
+                                            padding: 10,
                                             backgroundColor: 'red'
                                         }
                                 }>
@@ -68,16 +73,10 @@ class Archdaemon extends Component {
                 <TouchableHighlight onPress={() => {
                         this.setModalVisible(true)
                     }}>
-                    <Text 
-                        style={
-                            {
-                                fontSize: 30,
-                                padding: 20,
-                                backgroundColor: 'white'
-                            }
-                        }>
-                        {this.state.name}
-                    </Text>
+                    <Image
+                        source= {require("./thumbs/thumb_008.png")}
+                        style= {styles.thumb}
+                    />
                 </TouchableHighlight>
             </View>
         );

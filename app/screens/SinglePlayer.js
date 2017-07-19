@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Button, ScrollView, TouchableHighlight, Modal } from 'react-native';
+import { View, Text, Button, ScrollView, TouchableHighlight, Modal, StyleSheet } from 'react-native';
 
 import Hand from '../components/Hand';
 import Melee from '../components/Melee';
@@ -19,7 +19,8 @@ class SinglePlayer extends Component {
 
     render() {
         return (
-            <View>
+            <View style={styles.container}>
+                <Hand />
             	<Melee>
             		{this.state.meleeScore}
             	</Melee>
@@ -29,12 +30,19 @@ class SinglePlayer extends Component {
             	<Artillery>
             		{this.state.artilleryScore}
             	</Artillery>
-                <Hand />
             </View>
+
         );
     }
 }
 
+var styles = StyleSheet.create({
+    container: {
+    	flex: 1,
+        height: null,
+        width: null,
+    }
+}) 
 
 
 export default SinglePlayer;
