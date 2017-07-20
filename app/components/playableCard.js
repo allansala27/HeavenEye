@@ -26,6 +26,31 @@ import Berserker, {berserkerId} from './Cards/berserker';
 import IcePrincess, {iceprincessId} from './Cards/iceprincess';
 import Lenia, {leniaId} from './Cards/lenia';
 
+const Deck = [
+    <Atonement key="atonementId"/>, 
+    <Blessing key="blessingId"/>, 
+    <AngelOfDeath key="angelofdeathId"/>, 
+    <StormFall key="stormfallId"/>, 
+    <AeolianDance key="aeoliandanceId"/>, 
+    <Holmgang key="holmgangId"/>,
+    <Bloodmage key="bloodmageId"/>,
+    <Archdaemon key="archdaemonId"/>,
+    <LegionArcher key="legionarcherId"/>,
+    <Edgedancer key="edgedancerId"/>,
+    <Legionnaire key="legionnaireId"/>,
+    <Dreadnaught key="dreadnaughtId"/>,
+    <Titanus key="titanusId"/>,
+    <Katalies key="kataliesId"/>,
+    <WaterlightCityPrincess key="waterlightcityprincessId"/>,
+    <Ghostblade key="ghostbladeId"/>,
+    <Valkyria key="valkyriaId"/>,
+    <Centurion key="centurionId"/>,
+    <Berserker key="berserkerId"/>,
+    <IcePrincess key ="iceprincessId"/>,
+    <Lenia key="leniaId"/>
+    ];
+
+
 var styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -35,15 +60,18 @@ var styles = StyleSheet.create({
   }
 })
 
-class Hand extends Component {
+class PlayableCard extends Component {
     constructor(props) {
         super(props);
         this.getRandomList = this.getRandomList.bind(this);
     }
 
     getRandomList () {
-    return [<Atonement key="{atonementId}"/>, <Blessing key="blessingId"/>, <AngelOfDeath key="angelofdeathId"/>, <StormFall key="{stormfallId}"/>, <AeolianDance key="aeoliandanceId"/>, <Holmgang key="holmgangId"/> ];
-
+        let currentHand = [];
+        for(var i = 0; i < 3; i++) {
+            currentHand.push(Deck[Math.floor(Math.random() * 21)])
+        }
+        return currentHand;
     }
 
     render() {
@@ -58,4 +86,4 @@ class Hand extends Component {
     }
 }
 
-export default Hand;
+export default PlayableCard;

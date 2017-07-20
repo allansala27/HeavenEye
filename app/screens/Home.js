@@ -3,8 +3,8 @@ import { View, Text, Button } from 'react-native';
     
 class Home extends Component {
     
-    goToMenu = () => {
-        this.props.navigation.navigate('Menu');
+    playGame = () => {
+        this.props.navigation.navigate('Game');
     };
 
     render() {
@@ -12,7 +12,7 @@ class Home extends Component {
             <View>  
                 <Button
                     title="Play"
-                    onPress={this.goToMenu}
+                    onPress={this.playGame}
                 />
             </View>
         );

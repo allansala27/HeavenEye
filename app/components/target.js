@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Button, ScrollView, TouchableHighlight, Modal } from 'react-native';
 
-class Ranged extends Component {
+class Target extends Component {
 
 	render(){
 		return(
@@ -12,4 +12,4 @@ class Ranged extends Component {
 	}
 }
 
-export default Ranged;
+export default Target;

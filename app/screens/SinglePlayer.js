@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text, Button, ScrollView, TouchableHighlight, Modal, StyleSheet } from 'react-native';
 
-import Hand from '../components/Hand';
-import Melee from '../components/Melee';
-import Ranged from '../components/Ranged';
-import Artillery from '../components/Artillery';
+import PlayableCard from '../components/playableCard';
+
     
 class SinglePlayer extends Component {
 
@@ -20,16 +18,6 @@ class SinglePlayer extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Hand />
-            	<Melee>
-            		{this.state.meleeScore}
-            	</Melee>
-            	<Ranged>
-            		{this.state.rangedScore}
-            	</Ranged>
-            	<Artillery>
-            		{this.state.artilleryScore}
-            	</Artillery>
             </View>
 
         );

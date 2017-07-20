@@ -1,7 +1,7 @@
 import React from 'react';
 import { TabNavigator, StackNavigator, DrawerNavigator } from 'react-navigation';
 
-import Menu from '../screens/Menu';
+import Game from '../screens/Game';
 import Home from '../screens/Home';
 import SinglePlayer from '../screens/SinglePlayer'
 
@@ -13,10 +13,10 @@ export const Screens = StackNavigator ({
 		}
 	},
 
-	Menu: {
-		screen: Menu,
+	Game: {
+		screen: Game,
 		navigationOptions: {
-			title: 'Menu',
+			title: 'Game',
 		}
 	},
 
