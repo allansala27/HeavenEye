@@ -46,8 +46,11 @@ class PlayableCard extends Component {
 
     getRandomList () {
         let currentHand = [];
+        let usedCards = [];
         for(var i = 0; i < 3; i++) {
-            currentHand.push(Deck[Math.floor(Math.random() * 15)])
+            let randomIndex = Math.floor(Math.random() * 15)
+            currentHand.push(Deck[randomIndex])
+            usedCards.push(Deck[randomIndex])
         }
         return currentHand;
     }

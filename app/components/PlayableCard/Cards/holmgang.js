@@ -26,35 +26,6 @@ class Holmgang extends Component {
     render(){
         return(
             <View>
-                <Modal
-                    animationType={"slide"}
-                    transparent={false}
-                    visible={this.state.modalVisible}
-                    onRequestClose={() => {alert("Modal has been closed.")}}
-                >
-                    <View style={{marginTop: 22}}>
-                        <View>
-                            <Image
-                                source= {require('./imgs/card_0006_holmgang.png')}
-                                style= {styles.image}
-                            />
-                            <TouchableHighlight onPress={() => {
-                                this.setModalVisible(!this.state.modalVisible)
-                            }}>
-                                <Text 
-                                    style={
-                                        {
-                                            fontSize: 10,
-                                            padding: 5,
-                                            backgroundColor: 'red'
-                                        }
-                                }>
-                                    Hide Info
-                                </Text>
-                            </TouchableHighlight>
-                        </View>
-                    </View>
-                </Modal>
                 <TouchableHighlight onPress={() => {
                         this.setModalVisible(true)
                     }}>
