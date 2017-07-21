@@ -4,6 +4,7 @@ import { View, Text, Button, Image, StyleSheet, StatusBar } from 'react-native';
 import Target from '../components/Target';
 import PlayableCard from '../components/PlayableCard';
 import Timer from '../components/Timer';
+import Score from './Score';
 
 var styles = StyleSheet.create({
   container: {
@@ -15,12 +16,13 @@ var styles = StyleSheet.create({
     alignItems: 'center',
   }
 })
-
     
-class Game extends Component {
+export default class Game extends Component {
     constructor(props) {
         super(props);
-
+        this.state = {
+            score: 0,
+        }
     }
 
     render() {
@@ -35,10 +37,11 @@ class Game extends Component {
                 </Target>
                 <PlayableCard />
             </Image>
+            <Target/>
+            <PlayableCard />
+            <Score savedScore = {this.state.score}>
+            </Score>
         );
     }
 }
 
-
-
-export default Game;

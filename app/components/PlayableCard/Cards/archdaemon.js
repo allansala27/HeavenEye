@@ -27,35 +27,6 @@ class Archdaemon extends Component {
     render(){
         return(
             <View>
-                <Modal
-                    animationType={"slide"}
-                    transparent={false}
-                    visible={this.state.modalVisible}
-                    onRequestClose={() => {alert("Modal has been closed.")}}
-                >
-                    <View style={{marginTop: 22}}>
-                        <View>
-                            <Image
-                                source= {require('./imgs/card_0008_archdaemon.png')}
-                                style= {styles.image}
-                            />
-                            <TouchableHighlight onPress={() => {
-                                this.setModalVisible(!this.state.modalVisible)
-                            }}>
-                                <Text 
-                                    style={
-                                        {
-                                            fontSize: 20,
-                                            padding: 10,
-                                            backgroundColor: 'red'
-                                        }
-                                }>
-                                    Hide Info
-                                </Text>
-                            </TouchableHighlight>
-                        </View>
-                    </View>
-                </Modal>
                 <TouchableHighlight onPress={() => {
                         this.setModalVisible(true)
                     }}>
