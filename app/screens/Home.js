@@ -1,5 +1,21 @@
 import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, Image, StyleSheet } from 'react-native';
+
+var styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    width: undefined,
+    height: undefined,
+    backgroundColor:'transparent',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  logo:{
+    height:100,
+    width:300,
+    resizeMode: 'contain'
+  }
+})
     
 class Home extends Component {
     
@@ -9,14 +25,18 @@ class Home extends Component {
 
     render() {
         return (
-            <View>  
+            <Image source={require('../assets/images/heaveneye_screengame_menu.png')}
+            style={styles.container}>
+                <Image source={require('../assets/images/heaveneye_logo_white.png')}
+                style={styles.logo} />
                 <Button
-                    title="Play"
+                    title="Start Game"
                     onPress={this.playGame}
+                    color="#fff"
                 />
-            </View>
-        );
-    }
+            </Image>
+    );
+  }
 }
 
 

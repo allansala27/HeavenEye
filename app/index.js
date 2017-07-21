@@ -4,7 +4,7 @@ import { Screens } from './config/router';
 class App extends Component {
   	render() {
         return (
-            <Screens />
+            <Screens hideNavBar={true}  />
         );
     }
 }
