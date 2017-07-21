@@ -30,16 +30,10 @@ class IcePrincess extends Component {
                 <TouchableHighlight onPress={() => {
                         this.setModalVisible(true)
                     }}>
-                    <Text 
-                        style={
-                            {
-                                fontSize: 30,
-                                padding: 20,
-                                backgroundColor: 'white'
-                            }
-                        }>
-                        {this.state.name}
-                    </Text>
+                    <Image
+                        source= {require("./thumbs/thumb_020.png")}
+                        style= {styles.thumb}
+                    />
                 </TouchableHighlight>
             </View>
         );

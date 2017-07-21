@@ -7,8 +7,9 @@ export default StyleSheet.create({
         resizeMode: 'contain'
     },
     thumb: {
-        height:120,
-        width:70,
+        height:200,
+        width:125,
+        alignItems: 'center',
         resizeMode: 'contain'
     }
 }) 

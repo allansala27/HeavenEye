@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, StyleSheet } from 'react-native';
+import styles from './styles';
 
 import Bloodmage, {bloodmageId} from './Cards/bloodmage';
 import Archdaemon, {archdaemonId} from './Cards/archdaemon';
@@ -35,7 +36,6 @@ const Deck = [
     <Lenia key="leniaId"/>
     ];
 
-
 export default class Target extends Component {
 	constructor(props) {
         super(props);
@@ -49,7 +49,7 @@ export default class Target extends Component {
 
 	render(){
 		return(
-			<View>
+			<View style={styles.content}>
 				{this.chooseTarget()}
 			</View>	
 		);
