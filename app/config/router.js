@@ -9,6 +9,7 @@ export const Screens = StackNavigator ({
 		screen: Home,
 		navigationOptions: {
 			title: 'Heaven Eye',
+			header: null
 		}
 	},
 
@@ -16,6 +17,7 @@ export const Screens = StackNavigator ({
 		screen: Game,
 		navigationOptions: {
 			title: 'Game',
+			header: null
 		}
 	},
 
