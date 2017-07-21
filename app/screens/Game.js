@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
 
-import Target from '../components/target';
-import PlayableCard from '../components/playableCard';
+import Target from '../components/Target';
+import PlayableCard from '../components/PlayableCard';
 import Timer from '../components/Timer';
 
     
