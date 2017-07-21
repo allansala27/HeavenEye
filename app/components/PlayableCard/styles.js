@@ -6,5 +6,11 @@ export default StyleSheet.create({
     // remove width and height to override fixed static size
     width: null,
     height: null,
-  }
+  },
+  content:{
+        marginTop:380,
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'center'    //<-----
+    }
 })

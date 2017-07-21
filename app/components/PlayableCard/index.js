@@ -37,7 +37,6 @@ const Deck = [
     <Lenia key="leniaId"/>
     ];
 
-
 class PlayableCard extends Component {
     constructor(props) {
         super(props);
@@ -55,11 +54,11 @@ class PlayableCard extends Component {
     render() {
 
         return (
-            <View style={{backgroundColor: 'blue'}}>
+            <Image style={styles.content}>
                 <ScrollView horizontal={true}>
                     {this.getRandomList()}
                 </ScrollView>
-            </View>
+            </Image>
         );
     }
 }
