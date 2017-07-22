@@ -46,11 +46,30 @@ class PlayableCard extends Component {
         }
     }
 
+    shuffleArray(deck) {
+        var currentIndex = deck.length, temporaryValue, randomIndex;
+
+        // While there remain elements to shuffle...
+        while (0 !== currentIndex) {
+
+            // Pick a remaining element...
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+
+            // And swap it with the current element.
+            temporaryValue = deck[currentIndex];
+            deck[currentIndex] = deck[randomIndex];
+            deck[randomIndex] = temporaryValue;
+        }
+
+    return deck;
+    }
+
     getRandomList () {
+        let shuffledDeck = this.shuffleArray(Deck)
         let randomHand = [];
         for (var i = 0; i < 3; i++) {
-            let randomIndex = Math.floor(Math.random() * 15)
-            randomHand.push(Deck[randomIndex])
+            randomHand.push(Deck[i])
         }
         return randomHand;
     }
