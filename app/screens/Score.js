@@ -26,16 +26,13 @@ export default class Score extends Component {
 		}
 	}
 
-	setNewScore(scoreData) {
-		this.setState({
-			finalScore: scoreData
-		})
-	}
 
 	componentDidMount() {
-		database.ref("heaveneye-ace6a/-KpfX5lVHPEXvI4TAwVl").on('value' , function(score) {
-			let newScore = score.val().score
-			this.setNewScore(newScore)	
+		database.ref("heaveneye-ace6a/-KpfX5lVHPEXvI4TAwVl").on('value' , (score) => {
+			let newScore = score.val().score["score"]
+			// this.setNewScore(newScore)
+			this.setState({finalScore: newScore})
+			console.log("FINAL SCORE: "+newScore)
 		})
 	}
 
