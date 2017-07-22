@@ -30,6 +30,7 @@ export default class Score extends Component {
 		this.setState({
 			finalScore: scoreData
 		})
+		console.log(this.setNewScore.finalScore)
 	}
 
 	componentDidMount() {
