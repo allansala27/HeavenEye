@@ -34,7 +34,7 @@ export default class Score extends Component {
 				<Button
                     title="Restart"
                     onPress={this.newGame}
-                    style={styles.text.color}
+                    color="#fff"
                 />
 			</Image>	
 		)
