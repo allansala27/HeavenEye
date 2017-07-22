@@ -36,11 +36,11 @@ export default class Game extends Component {
                     </Text>
                 </Target>
                 <PlayableCard />
-            </Image>
             <Target/>
             <PlayableCard />
             <Score savedScore = {this.state.score}>
             </Score>
+            </Image>
         );
     }
 }
