@@ -18,19 +18,6 @@ export default class Timer extends Component {
         }
     }
 
-    // componentDidMount() {
-    //     Animated.timing(this.state.animateValue, {
-    //         duration: timeLimit,
-    //         easing: Easing.linear, // No easing
-    //         toValue: 0,
-    //     }).start();
-    // }
-
-    // componentWillUpdate() {
-    //     this.state.animateValue
-    //     this.props.getTime(this.state.animateValue)
-    // }
-
     render() {
         // Animate the Timer color from grey to red, starting when there are left only 12 seconds
         const backgroundColor = this.props.animateValue.interpolate({

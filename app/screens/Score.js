@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Button, Image, StyleSheet } from 'react-native';
+import database from '../config/database'
 
 var styles = StyleSheet.create({
   container: {
@@ -18,6 +19,26 @@ var styles = StyleSheet.create({
 })
 
 export default class Score extends Component {
+	constructor(props){
+		super(props);
+		this.state = {
+			finalScore: 0
+		}
+	}
+
+	setNewScore(scoreData) {
+		this.setState({
+			finalScore: scoreData
+		})
+	}
+
+	componentDidMount() {
+		database.ref("heaveneye-ace6a/-KpfX5lVHPEXvI4TAwVl").on('value' , function(score) {
+			let newScore = score.val().score
+			this.setNewScore(newScore)	
+		})
+	}
+
 	newGame = () => {
         this.props.navigation.navigate('Game');
     };
@@ -29,8 +50,11 @@ export default class Score extends Component {
 					GAME OVER
 				</Text>
 				<Text>
-					{this.props.savedScore}
-				</Text>	
+					SCORE
+				</Text>
+				<Text>
+					{this.state.finalScore}
+				</Text>
 				<Button
                     title="Restart"
                     onPress={this.newGame}
