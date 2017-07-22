@@ -8,7 +8,7 @@ type State = {
   animateValue: any,
 };
 
-const timeLimit = 30000;
+const timeLimit = 5000;
 
 export default class Timer extends Component {
     constructor(props){
@@ -18,23 +18,27 @@ export default class Timer extends Component {
         }
     }
 
-    componentDidMount() {
-        Animated.timing(this.state.animateValue, {
-            duration: timeLimit,
-            easing: Easing.linear, // No easing
-            toValue: 0,
-        }).start();
-    }
+    // componentDidMount() {
+    //     Animated.timing(this.state.animateValue, {
+    //         duration: timeLimit,
+    //         easing: Easing.linear, // No easing
+    //         toValue: 0,
+    //     }).start();
+    // }
 
+    // componentWillUpdate() {
+    //     this.state.animateValue
+    //     this.props.getTime(this.state.animateValue)
+    // }
 
     render() {
         // Animate the Timer color from grey to red, starting when there are left only 12 seconds
-        const backgroundColor = this.state.animateValue.interpolate({
+        const backgroundColor = this.props.animateValue.interpolate({
             inputRange: [0, timeLimit * 0.4, timeLimit],
             outputRange: ['rgba(255,0,0, 1)', 'rgba(0,0,0, 0.3)', 'rgba(0,0,0, 0.3)'],
         });
         // Animate the Timer width from DEVICE_WIDTH to 0 in TIME_LIMIT_MS (which currently is 30 seconds)
-        const width = this.state.animateValue.interpolate({
+        const width = this.props.animateValue.interpolate({
             inputRange: [0, timeLimit],
             outputRange: [0, metrics.DEVICE_WIDTH],
         });
