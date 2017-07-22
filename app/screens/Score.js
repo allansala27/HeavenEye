@@ -15,6 +15,16 @@ var styles = StyleSheet.create({
   	fontSize: 36,
   	fontWeight: "600",
   	color: '#f0ffff',
+  },
+  scoreTitle: {
+  	fontSize: 20,
+  	fontWeight: "300",
+  	color: '#f0ffff'
+  },
+  score: {
+  	fontSize: 60,
+  	fontWeight: "500",
+  	color: 'red'
   }
 })
 
@@ -34,9 +44,11 @@ export default class Score extends Component {
 	}
 
 	componentDidMount() {
-		database.ref("heaveneye-ace6a/-KpfX5lVHPEXvI4TAwVl").on('value' , function(score) {
-			let newScore = score.val().score
-			this.setNewScore(newScore)	
+		database.ref("heaveneye-ace6a/-KpfX5lVHPEXvI4TAwVl").on('value' , (score) => {
+			let newScore = score.val().score["score"]
+			// this.setNewScore(newScore)
+			this.setState({finalScore: newScore})
+			console.log("FINAL SCORE: "+newScore)
 		})
 	}
 
@@ -50,10 +62,10 @@ export default class Score extends Component {
 				<Text style={styles.text}>
 					GAME OVER
 				</Text>
-				<Text>
+				<Text style={styles.scoreTitle}>
 					SCORE
 				</Text>
-				<Text>
+				<Text style={styles.score}>
 					{this.state.finalScore}
 				</Text>
 				<Button

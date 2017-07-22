@@ -71,7 +71,6 @@ export default class Game extends Component {
                 score: this.state.score + 1
             })
         }
-        console.log("YOUR CURRENT SCORE: " + this.state.score)
         let newScore = { score: this.state.score};
         database.ref("heaveneye-ace6a/-KpfX5lVHPEXvI4TAwVl").update({ score: newScore })
  
