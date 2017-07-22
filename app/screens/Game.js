@@ -67,7 +67,6 @@ export default class Game extends Component {
             <Image source={require('../assets/images/heaveneye_screengame_field.jpg')} style={styles.container}>
                 <StatusBar hidden />
                 <Timer /> 
-                <Score savedScore = {this.state.score} />
                 <Target getTarget={this.getTargetValue.bind(this)} />
                 <PlayableCards chooseValue={this.getChosenValue.bind(this)} />
             </Image>
