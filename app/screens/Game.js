@@ -50,24 +50,36 @@ export default class Game extends Component {
 
      componentDidMount() {
         this.spin();
+        database.push({
+            score: this.state.score
+        })
     }
 
     spin = () => {
-        // this.setState({
-        //     animateValue : this.state.animateValue.setValue(timeLimit)
-        // })
         this.animateValue.setValue(timeLimit);
          Animated.timing(this.animateValue, {
             duration: timeLimit,
-            easing: Easing.linear, // No easing
+            easing: Easing.linear,
             toValue: 0,
         }).start(()=> {
-            this.spin()
-            console.log('Game Finished!!!!!!')
+            this.props.navigation.navigate('Score');
         });
     }
-    componentWillUpdate(){
-
+    componentDidUpdate(){
+        let currentTarget = this.state.targetVal;
+        let currentChosenCard = this.state.chosenVal;
+        if (currentTarget < currentChosenCard) {
+            this.setState({
+                score: this.state.score + 1
+            })
+        }
+        console.log("YOUR CURRENT SCORE: " + this.state.score)
+        let newScore = { score: this.state.score};
+        let newScoreKey = firebase.database().ref().child('score').push().key;
+        let updates = {};
+        updates['/score/' + newScoreKey] = newScore;
+        updates['/user-score/' + newScoreKey] = newScore;
+ 
     }
 
     getRemainingTime(timeRemaining) {
