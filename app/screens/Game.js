@@ -19,7 +19,7 @@ const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 
-const database = firebase.database().ref();
+const database = firebase.database();
 
 var styles = StyleSheet.create({
   container: {
@@ -45,14 +45,12 @@ export default class Game extends Component {
             animateValue: new Animated.Value(timeLimit)
         } 
         this.animateValue = new Animated.Value(timeLimit)
-        this.scoreRef = database.child('score');
+        
     }
 
      componentDidMount() {
         this.spin();
-        database.push({
-            score: this.state.score
-        })
+        database.ref("heaveneye-ace6a/-KpfX5lVHPEXvI4TAwVl").update({ score: this.state.score })
     }
 
     spin = () => {
@@ -75,10 +73,7 @@ export default class Game extends Component {
         }
         console.log("YOUR CURRENT SCORE: " + this.state.score)
         let newScore = { score: this.state.score};
-        let newScoreKey = firebase.database().ref().child('score').push().key;
-        let updates = {};
-        updates['/score/' + newScoreKey] = newScore;
-        updates['/user-score/' + newScoreKey] = newScore;
+        database.ref("heaveneye-ace6a/-KpfX5lVHPEXvI4TAwVl").update({ score: newScore })
  
     }
 
