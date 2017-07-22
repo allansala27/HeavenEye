@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Button, ScrollView, TouchableHighlight, Modal, StyleSheet, Image} from 'react-native';
 import styles from './styles';
 
+//Cards
 import Bloodmage, {bloodmageId} from './Cards/bloodmage';
 import Archdaemon, {archdaemonId} from './Cards/archdaemon';
 import LegionArcher, {legionarcherId} from './Cards/legionarcher';
@@ -36,25 +37,39 @@ const Deck = [
     <Lenia key="leniaId"/>
     ];
 
-export default class Target extends Component {
-	constructor(props) {
+class PlayableCard extends Component {
+    constructor(props) {
         super(props);
-        this.chooseTarget = this.chooseTarget.bind(this);
+        this.getRandomList = this.getRandomList.bind(this);
         this.state = {
-            value: 0
+            
         }
     }
 
-    chooseTarget() {
-        let currentCard = Deck[Math.floor(Math.random() * 15)]
-        return currentCard;
+    getRandomList () {
+        let randomHand = [];
+        for (var i = 0; i < 3; i++) {
+            let randomIndex = Math.floor(Math.random() * 15)
+            randomHand.push(Deck[randomIndex])
+        }
+        return randomHand;
     }
 
-	render(){
-		return(
-			<View style={styles.content}>
-				{React.cloneElement(this.chooseTarget(), {getTarget: this.props.getTarget} )}
-			</View>	
-		);
-	}
+    render() {
+        const currentHand = this.getRandomList();
+        return (
+            <Image style={styles.content}>
+                <ScrollView horizontal={true}>
+                    {currentHand.map((card) => {
+                        return (
+                            React.cloneElement( card , {chosenValue: this.props.chooseValue} )
+                        )
+                    })}
+                </ScrollView>
+            </Image>
+        );
+    }
 }
+
+
+export default PlayableCard;

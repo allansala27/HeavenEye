@@ -14,8 +14,8 @@ export default class WaterlightCityPrincess extends Component {
         }    
     }
 
-    componentWillMount(){
-        console.log('this is deck!!! PAY ATTENTION TO ME');
+    componentDidMount() {
+        this.props.getTarget(this.state.value)
     }
 
 
