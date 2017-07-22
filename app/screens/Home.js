@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text, Button, Image, StyleSheet } from 'react-native';
+import {  
+    Button, 
+    Image, 
+    StyleSheet 
+} from 'react-native';
 
 var styles = StyleSheet.create({
   container: {
@@ -18,7 +22,6 @@ var styles = StyleSheet.create({
 })
     
 class Home extends Component {
-    
     playGame = () => {
         this.props.navigation.navigate('Game');
     };

@@ -15,12 +15,8 @@ export default class Archdaemon extends Component {
         }    
     }
 
-    componentWillMount(){
-        console.log('this is deck!!! PAY ATTENTION TO ME');
-    }
-
-    setModalVisible(visible) {
-        this.setState({modalVisible: visible});
+    componentDidMount() {
+        this.props.getTarget(this.state.value)
     }
 
 

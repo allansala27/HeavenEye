@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, Button, Image, ScrollView, TouchableHighlight, Modal, StyleSheet } from 'react-native';
 import styles from './styles'
 
-
-export default class Berserker extends Component {
+class Berserker extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -16,21 +15,24 @@ export default class Berserker extends Component {
         }    
     }
 
-    componentDidMount() {
-        this.props.getTarget(this.state.value)
+    chooseValue() {
+       this.props.chosenValue(this.state.value)
     }
-
 
     render(){
         return(
             <View>
-                <Image
-                    source= {require('./imgs/card_0019_berserker.png')}
-                    style= {styles.image}
-                />
+                <TouchableHighlight onPress={this.chooseValue.bind(this)}>
+                    <Image
+                        source= {require("./thumbs/thumb_019.png")}
+                        style= {styles.thumb}
+                    />
+                </TouchableHighlight>
             </View>
         );
     }
 }
 
+
+export default Berserker;
 export const berserkerId = '0019';

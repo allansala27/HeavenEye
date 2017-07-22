@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text, Button, Image, ScrollView, TouchableHighlight, Modal, StyleSheet } from 'react-native';
-import styles from './styles'
+import styles from './styles' 
 
-export default class Bloodmage extends Component {
+class Bloodmage extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -14,21 +14,25 @@ export default class Bloodmage extends Component {
             modalVisible: false
         }    
     }
-    
-    componentDidMount() {
-        this.props.getTarget(this.state.value)
+
+    chooseValue() {
+       this.props.chosenValue(this.state.value)
     }
 
     render(){
         return(
             <View>
-                <Image
-                    source= {require('./imgs/card_0007_bloodmage.png')}
-                    style= {styles.image}
-                />
+                <TouchableHighlight onPress={this.chooseValue.bind(this)}>
+                    <Image
+                        source= {require("./thumbs/thumb_007.png")}
+                        style= {styles.thumb}
+                    />
+                </TouchableHighlight>
             </View>
         );
     }
 }
 
+
+export default Bloodmage;
 export const bloodmageId = '0007';

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, Button, Image, ScrollView, TouchableHighlight, Modal, StyleSheet } from 'react-native';
 import styles from './styles'
 
-export default class Legionnaire extends Component {
+class Legionnaire extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -15,21 +15,24 @@ export default class Legionnaire extends Component {
         }    
     }
 
-    componentDidMount() {
-        this.props.getTarget(this.state.value)
+    chooseValue() {
+       this.props.chosenValue(this.state.value)
     }
-
 
     render(){
         return(
             <View>
-                <Image
-                    source= {require('./imgs/card_0011_legionnaire.png')}
-                    style= {styles.image}
-                />
+                <TouchableHighlight onPress={this.chooseValue.bind(this)}>
+                    <Image
+                        source= {require("./thumbs/thumb_011.png")}
+                        style= {styles.thumb}
+                    />
+                </TouchableHighlight>
             </View>
         );
     }
 }
 
+
+export default Legionnaire;
 export const legionnaireId = '0011';

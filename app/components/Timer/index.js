@@ -14,7 +14,7 @@ export default class Timer extends Component {
     constructor(props){
         super(props);
         this.state = {
-           animateValue: new Animated.Value(timeLimit) 
+           animateValue: new Animated.Value(timeLimit),
         }
     }
 
@@ -25,6 +25,7 @@ export default class Timer extends Component {
             toValue: 0,
         }).start();
     }
+
 
     render() {
         // Animate the Timer color from grey to red, starting when there are left only 12 seconds
